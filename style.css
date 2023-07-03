@@ -1,5 +1,5 @@
 body {
-    background-color: #F2F2F5;
+    background-color: white;
     padding: 100px
 }
 
@@ -11,7 +11,7 @@ body {
     border: 1px solid #E6E9F0;
     border-radius: 10px;
     transition: 0.4s;
-    margin-top: 30px;
+    margin-top: 15px;
 
     font-family: "Aeonik", sans-serif;
     font-weight: normal;
@@ -47,4 +47,38 @@ body {
     margin-top: 30px;
     font-size: 15px;
     line-height: 19px;
+}
+
+#faq-container {
+    position: relative;  /* Necessary for the absolute positioning of the child to work */
+    width: 687px;
+    margin: 0 auto;  /* Centers the container */
+} 
+
+#view-more-container {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    padding: 68px 0px 27px 0px;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.00) 0%, #FFF 83.43%);
+}
+
+#view-more-button {
+    color: #3399FD;
+    text-align: center;
+    font-size: 14px;
+    font-family: "Aeonik", sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 20px;
+    letter-spacing: 0.14px;
+    background-color: rgba(255, 255, 255, 0);
+    border: none;
+    box-shadow: none;
+    display: flex;
+    align-items: center;
 }
