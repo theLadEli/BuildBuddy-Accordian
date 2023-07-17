@@ -1,5 +1,16 @@
 <!-- CSS HERE -->
 <style>
+
+@media screen and (max-width: 900px){
+  #faq-container {
+    width: 100% !important;
+  }
+
+  .accordion {
+    width: 100% !important;
+  }
+}
+
 .accordion {
     background-color: #fff;
     cursor: pointer;
@@ -86,22 +97,71 @@
 
 <!-- JS HERE -->
 <script>
-    var FAQs = [
-  {question: "Question 1", answer: "Answer 1"},
-  {question: "Question 2", answer: "Answer 2"},
-  {question: "Question 3", answer: "Answer 2"},
-  {question: "Question 4", answer: "Answer 2"},
-  {question: "Question 5", answer: "Answer 2"},
-  {question: "Question 6", answer: "Answer 2"},
-  {question: "Question 7", answer: "Answer 2"},
-  {question: "Question 8", answer: "Answer 2"},
-  {question: "Question 9", answer: "Answer 2"},
-  {question: "Question 10", answer: "Answer 2"},
-  {question: "Question 11", answer: "Answer 2"},
-  {question: "Question 12", answer: "Answer 2"},
-  {question: "Question 13", answer: "Answer 2"},
-  {question: "Question 14", answer: "Answer 2"},
-  // Add more FAQ objects here...
+var FAQs = [
+  {
+    question: "What are the benefits of using BuildBuddy's platform over traditional methods?",
+    answer: "BuildBuddy's platform offers convenience, efficiency, and accuracy. By digitising the extension planning process, it saves you time, helps you manage costs, ensures transparency with builders and allows for accurate quotes based on your specific choices."
+  },
+  {
+    question: "Who is BuildBuddy for?",
+    answer: "BuildBuddy is for homeowners planning an extension or renovation project, builders seeking an efficient way to quote and manage projects, and for suppliers of home fixtures and fittings looking to reach their target customers."
+  },
+  {
+    question: "Is BuildBuddy really free?",
+    answer: "Yes, BuildBuddy is absolutely free for homeowners. When our founder, David, began his own home extension project, he realized how complex and challenging the process was. He believed that it shouldn't have to be that way, and this inspired him to create BuildBuddy - a platform to simplify and streamline the home extension process. This is why we are committed to developing BuildBuddy for homeowners - we want everyone to have access to the tools they need for a smooth, successful home extension project."
+  },
+  {
+    question: "What is a tender process?",
+    answer: "A tender process is a method of procuring services in which service providers are invited to submit a bid for work. BuildBuddy facilitates this by allowing homeowners to invite builders to submit their quotes based on the project details."
+  },
+  {
+    question: "How does BuildBuddy help me find a builder?",
+    answer: "BuildBuddy connects homeowners with local, accredited builders. Once you've completed your project specifications, you can invite builders to submit quotes directly through the platform."
+  },
+  {
+    question: "What are Specifications?",
+    answer: "Specifications are detailed descriptions of the materials, workmanship, and the quality desired for a construction project. On BuildBuddy, you can create your own specifications to let builders know exactly what you want."
+  },
+  {
+    question: "What if I need help setting up my BuildBuddy account?",
+    answer: "If you need help, you can reach out to our customer service team through the 'Contact Us' section on the website. We're here to assist you!"
+  },
+  {
+    question: "How can I share my project with my builder?",
+    answer: "You can share your project with your builder by inviting them via email directly from the BuildBuddy platform."
+  },
+  {
+    question: "Can I share my project with my spouse or other family members?",
+    answer: "At present, BuildBuddy primarily allows you to invite builders to view your project. However, the ability to share your project with family members or other collaborators is a feature under active development. In the meantime, you can share your account details as our platform supports multi-device access. That way, anyone you trust can log in and see your project details."
+  },
+  {
+    question: "Is there a limit to BuildBuddy's free access?",
+    answer: "As a homeowner, you have full access to all of BuildBuddy's features for free. This includes planning, inviting builders for quotes, and much more."
+  },
+  {
+    question: "How can I use the BuildBuddy Budget Tool?",
+    answer: "The Budget Tool in BuildBuddy allows you to input all of your costs and track them in real time, providing a clear picture of your spending throughout the project."
+  },
+  {
+    question: "Can I access my BuildBuddy account from multiple devices?",
+    answer: "Yes, your BuildBuddy account is accessible from any device with an internet connection. You can plan and monitor your project on the go!"
+  },
+  {
+    question: "Can I use BuildBuddy for smaller renovation projects?",
+    answer: "Absolutely! BuildBuddy is suitable for projects of all sizes, whether you're planning a small renovation or a large extension."
+  },
+  {
+    question: "What do I do if I forget my BuildBuddy account password?",
+    answer: "If you forget your password, click on the 'Forgot password' link on the login page and follow the instructions to reset it."
+  },
+  {
+    question: "Can I edit my project details after I've already started?",
+    answer: "Yes, you can update your project details at any time during the planning phase. Changes will be visible to builders if they've already been invited to quote."
+  },
+  {
+    question: "How can I contact BuildBuddy's customer service?",
+    answer: "You can reach our customer service team via the 'Contact Us' section on our website. We're here to assist you with any queries you have about BuildBuddy."
+  },
 ];
 
 var itemsToShow = 10;
