@@ -1,17 +1,16 @@
 <!-- CSS HERE -->
 <style>
+  @media screen and (max-width: 900px) {
+    #faq-container {
+      width: 100% !important;
+    }
 
-@media screen and (max-width: 900px){
-  #faq-container {
-    width: 100% !important;
+    .accordion {
+      width: 100% !important;
+    }
   }
 
   .accordion {
-    width: 100% !important;
-  }
-}
-
-.accordion {
     background-color: #fff;
     cursor: pointer;
     padding: 15px 20px;
@@ -26,44 +25,46 @@
     font-size: 17px;
     color: #272F3A;
     text-align: left;
-}
+  }
 
-.accordion-button {
+  .accordion-button {
     display: flex;
     align-items: center;
-}
+  }
 
-.accordion-icon {
+  .accordion-icon {
     width: 13px;
     height: 20px;
     margin-right: 20px;
-}
+  }
 
-.active .accordion-icon {
+  .active .accordion-icon {
     content: url("http://staging15.buildbuddy.co/wp-content/uploads/2023/06/minus.svg");
-}
+  }
 
-.panel {
+  .panel {
     padding: 0 32px;
     background-color: white;
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.2s ease-out;
-}
+  }
 
-.panel p {
+  .panel p {
     margin-top: 30px;
     font-size: 15px;
     line-height: 19px;
-}
+  }
 
-#faq-container {
-    position: relative;  /* Necessary for the absolute positioning of the child to work */
+  #faq-container {
+    position: relative;
+    /* Necessary for the absolute positioning of the child to work */
     width: 687px;
-    margin: 0 auto;  /* Centers the container */
-} 
+    margin: 0 auto;
+    /* Centers the container */
+  }
 
-#view-more-container {
+  #view-more-container {
     position: absolute;
     bottom: 0;
     left: 0;
@@ -73,9 +74,9 @@
     align-items: flex-end;
     padding: 68px 0px 27px 0px;
     background: linear-gradient(180deg, rgba(255, 255, 255, 0.00) 0%, #FFF 83.43%);
-}
+  }
 
-#view-more-button {
+  #view-more-button {
     color: #3399FD;
     text-align: center;
     font-size: 14px;
@@ -89,7 +90,7 @@
     box-shadow: none;
     display: flex;
     align-items: center;
-}
+  }
 </style>
 
 <!-- HTML HERE -->
@@ -97,175 +98,174 @@
 
 <!-- JS HERE -->
 <script>
-var FAQs = [
-  {
-    question: "What are the benefits of using BuildBuddy's platform over traditional methods?",
-    answer: "BuildBuddy's platform offers convenience, efficiency, and accuracy. By digitising the extension planning process, it saves you time, helps you manage costs, ensures transparency with builders and allows for accurate quotes based on your specific choices."
-  },
-  {
-    question: "Who is BuildBuddy for?",
-    answer: "BuildBuddy is for homeowners planning an extension or renovation project, builders seeking an efficient way to quote and manage projects, and for suppliers of home fixtures and fittings looking to reach their target customers."
-  },
-  {
-    question: "Is BuildBuddy really free?",
-    answer: "Yes, BuildBuddy is absolutely free for homeowners. When our founder, David, began his own home extension project, he realized how complex and challenging the process was. He believed that it shouldn't have to be that way, and this inspired him to create BuildBuddy - a platform to simplify and streamline the home extension process. This is why we are committed to developing BuildBuddy for homeowners - we want everyone to have access to the tools they need for a smooth, successful home extension project."
-  },
-  {
-    question: "What is a tender process?",
-    answer: "A tender process is a method of procuring services in which service providers are invited to submit a bid for work. BuildBuddy facilitates this by allowing homeowners to invite builders to submit their quotes based on the project details."
-  },
-  {
-    question: "How does BuildBuddy help me find a builder?",
-    answer: "BuildBuddy connects homeowners with local, accredited builders. Once you've completed your project specifications, you can invite builders to submit quotes directly through the platform."
-  },
-  {
-    question: "What are Specifications?",
-    answer: "Specifications are detailed descriptions of the materials, workmanship, and the quality desired for a construction project. On BuildBuddy, you can create your own specifications to let builders know exactly what you want."
-  },
-  {
-    question: "What if I need help setting up my BuildBuddy account?",
-    answer: "If you need help, you can reach out to our customer service team through the 'Contact Us' section on the website. We're here to assist you!"
-  },
-  {
-    question: "How can I share my project with my builder?",
-    answer: "You can share your project with your builder by inviting them via email directly from the BuildBuddy platform."
-  },
-  {
-    question: "Can I share my project with my spouse or other family members?",
-    answer: "At present, BuildBuddy primarily allows you to invite builders to view your project. However, the ability to share your project with family members or other collaborators is a feature under active development. In the meantime, you can share your account details as our platform supports multi-device access. That way, anyone you trust can log in and see your project details."
-  },
-  {
-    question: "Is there a limit to BuildBuddy's free access?",
-    answer: "As a homeowner, you have full access to all of BuildBuddy's features for free. This includes planning, inviting builders for quotes, and much more."
-  },
-  {
-    question: "How can I use the BuildBuddy Budget Tool?",
-    answer: "The Budget Tool in BuildBuddy allows you to input all of your costs and track them in real time, providing a clear picture of your spending throughout the project."
-  },
-  {
-    question: "Can I access my BuildBuddy account from multiple devices?",
-    answer: "Yes, your BuildBuddy account is accessible from any device with an internet connection. You can plan and monitor your project on the go!"
-  },
-  {
-    question: "Can I use BuildBuddy for smaller renovation projects?",
-    answer: "Absolutely! BuildBuddy is suitable for projects of all sizes, whether you're planning a small renovation or a large extension."
-  },
-  {
-    question: "What do I do if I forget my BuildBuddy account password?",
-    answer: "If you forget your password, click on the 'Forgot password' link on the login page and follow the instructions to reset it."
-  },
-  {
-    question: "Can I edit my project details after I've already started?",
-    answer: "Yes, you can update your project details at any time during the planning phase. Changes will be visible to builders if they've already been invited to quote."
-  },
-  {
-    question: "How can I contact BuildBuddy's customer service?",
-    answer: "You can reach our customer service team via the 'Contact Us' section on our website. We're here to assist you with any queries you have about BuildBuddy."
-  },
-];
+  var FAQs = [{
+      question: "What are the benefits of using BuildBuddy's platform over traditional methods?",
+      answer: "BuildBuddy's platform offers convenience, efficiency, and accuracy. By digitising the extension planning process, it saves you time, helps you manage costs, ensures transparency with builders and allows for accurate quotes based on your specific choices."
+    },
+    {
+      question: "Who is BuildBuddy for?",
+      answer: "BuildBuddy is for homeowners planning an extension or renovation project, builders seeking an efficient way to quote and manage projects, and for suppliers of home fixtures and fittings looking to reach their target customers."
+    },
+    {
+      question: "Is BuildBuddy really free?",
+      answer: "Yes, BuildBuddy is absolutely free for homeowners. When our founder, David, began his own home extension project, he realized how complex and challenging the process was. He believed that it shouldn't have to be that way, and this inspired him to create BuildBuddy - a platform to simplify and streamline the home extension process. This is why we are committed to developing BuildBuddy for homeowners - we want everyone to have access to the tools they need for a smooth, successful home extension project."
+    },
+    {
+      question: "What is a tender process?",
+      answer: "A tender process is a method of procuring services in which service providers are invited to submit a bid for work. BuildBuddy facilitates this by allowing homeowners to invite builders to submit their quotes based on the project details."
+    },
+    {
+      question: "How does BuildBuddy help me select a builder?",
+      answer: "While BuildBuddy does not provide a direct builder search function, our platform is designed to simplify the process of selecting a builder. By enabling homeowners to invite builders to view their project specifications, and submit quotes directly through the platform, you can easily compare and choose the builder that best fits your project's needs and budget."
+    },
+    {
+      question: "What are Specifications?",
+      answer: "Specifications are detailed descriptions of the materials, workmanship, and the quality desired for a construction project. On BuildBuddy, you can create your own specifications to let builders know exactly what you want."
+    },
+    {
+      question: "What if I need help setting up my BuildBuddy account?",
+      answer: "If you need help, you can reach out to our customer service team through the 'Contact Us' section on the website. We're here to assist you!"
+    },
+    {
+      question: "How can I share my project with my builder?",
+      answer: "You can share your project with your builder by inviting them via email directly from the BuildBuddy platform."
+    },
+    {
+      question: "Can I share my project with my spouse or other family members?",
+      answer: "At present, BuildBuddy primarily allows you to invite builders to view your project. However, the ability to share your project with family members or other collaborators is a feature under active development. In the meantime, you can share your account details as our platform supports multi-device access. That way, anyone you trust can log in and see your project details."
+    },
+    {
+      question: "Is there a limit to BuildBuddy's free access?",
+      answer: "As a homeowner, you have full access to all of BuildBuddy's features for free. This includes planning, inviting builders for quotes, and much more."
+    },
+    {
+      question: "How can I use the BuildBuddy Budget Tool?",
+      answer: "The Budget Tool in BuildBuddy allows you to input all of your costs and track them in real time, providing a clear picture of your spending throughout the project."
+    },
+    {
+      question: "Can I access my BuildBuddy account from multiple devices?",
+      answer: "Yes, your BuildBuddy account is accessible from any device with an internet connection. You can plan and monitor your project on the go!"
+    },
+    {
+      question: "Can I use BuildBuddy for smaller renovation projects?",
+      answer: "Absolutely! BuildBuddy is suitable for projects of all sizes, whether you're planning a small renovation or a large extension."
+    },
+    {
+      question: "What do I do if I forget my BuildBuddy account password?",
+      answer: "If you forget your password, click on the 'Forgot password' link on the login page and follow the instructions to reset it."
+    },
+    {
+      question: "Can I edit my project details after I've already started?",
+      answer: "Yes, you can update your project details at any time during the planning phase. Changes will be visible to builders if they've already been invited to quote."
+    },
+    {
+      question: "How can I contact BuildBuddy's customer service?",
+      answer: "You can reach our customer service team via the 'Contact Us' section on our website. We're here to assist you with any queries you have about BuildBuddy."
+    },
+  ];
 
-var itemsToShow = 10;
+  var itemsToShow = 10;
 
-function createAccordionItem(question, answer) {
-  var accordion = document.createElement('div');
-  accordion.className = 'accordion';
+  function createAccordionItem(question, answer) {
+    var accordion = document.createElement('div');
+    accordion.className = 'accordion';
 
-  var accordionButton = document.createElement('div');
-  accordionButton.className = 'accordion-button';
-  
-  var accordionIcon = document.createElement('img');
-  accordionIcon.className = 'accordion-icon';
-  accordionIcon.src = 'http://staging15.buildbuddy.co/wp-content/uploads/2023/06/plus.svg';
+    var accordionButton = document.createElement('div');
+    accordionButton.className = 'accordion-button';
 
-  var questionText = document.createElement('span');
-  questionText.textContent = question;
+    var accordionIcon = document.createElement('img');
+    accordionIcon.className = 'accordion-icon';
+    accordionIcon.src = 'http://staging15.buildbuddy.co/wp-content/uploads/2023/06/plus.svg';
 
-  var panel = document.createElement('div');
-  panel.className = 'panel';
+    var questionText = document.createElement('span');
+    questionText.textContent = question;
 
-  var answerText = document.createElement('p');
-  answerText.textContent = answer;
+    var panel = document.createElement('div');
+    panel.className = 'panel';
 
-  accordionButton.appendChild(accordionIcon);
-  accordionButton.appendChild(questionText);
-  accordion.appendChild(accordionButton);
-  panel.appendChild(answerText);
-  accordion.appendChild(panel);
-  
-  var faqContainer = document.getElementById('faq-container');
-  faqContainer.appendChild(accordion);
+    var answerText = document.createElement('p');
+    answerText.textContent = answer;
 
-  addAccordionFunctionality(accordion);
-}
+    accordionButton.appendChild(accordionIcon);
+    accordionButton.appendChild(questionText);
+    accordion.appendChild(accordionButton);
+    panel.appendChild(answerText);
+    accordion.appendChild(panel);
 
-function addAccordionFunctionality(accordion) {
-  accordion.firstElementChild.addEventListener("click", function() {
-    var acc = document.getElementsByClassName("accordion");
-    for (var j = 0; j < acc.length; j++) {
-      if (acc[j] !== accordion) {
-        acc[j].firstElementChild.classList.remove("active");
-        acc[j].lastElementChild.style.maxHeight = null;
-        acc[j].firstElementChild.firstElementChild.src = "http://staging15.buildbuddy.co/wp-content/uploads/2023/06/plus.svg";
+    var faqContainer = document.getElementById('faq-container');
+    faqContainer.appendChild(accordion);
+
+    addAccordionFunctionality(accordion);
+  }
+
+  function addAccordionFunctionality(accordion) {
+    accordion.firstElementChild.addEventListener("click", function () {
+      var acc = document.getElementsByClassName("accordion");
+      for (var j = 0; j < acc.length; j++) {
+        if (acc[j] !== accordion) {
+          acc[j].firstElementChild.classList.remove("active");
+          acc[j].lastElementChild.style.maxHeight = null;
+          acc[j].firstElementChild.firstElementChild.src =
+            "http://staging15.buildbuddy.co/wp-content/uploads/2023/06/plus.svg";
+        }
       }
-    }
 
-    var panel = accordion.lastElementChild;
-    var button = accordion.firstElementChild;
-    var icon = button.firstElementChild;
-    if (button.classList.contains("active")) {
-      button.classList.remove("active");
-      panel.style.maxHeight = null;
-      icon.src = "http://staging15.buildbuddy.co/wp-content/uploads/2023/06/plus.svg";
-    } else {
-      button.classList.add("active");
-      panel.style.maxHeight = panel.scrollHeight + "px";
-      icon.src = "http://staging15.buildbuddy.co/wp-content/uploads/2023/06/minus.svg";
-    }
-  });
-}
+      var panel = accordion.lastElementChild;
+      var button = accordion.firstElementChild;
+      var icon = button.firstElementChild;
+      if (button.classList.contains("active")) {
+        button.classList.remove("active");
+        panel.style.maxHeight = null;
+        icon.src = "http://staging15.buildbuddy.co/wp-content/uploads/2023/06/plus.svg";
+      } else {
+        button.classList.add("active");
+        panel.style.maxHeight = panel.scrollHeight + "px";
+        icon.src = "http://staging15.buildbuddy.co/wp-content/uploads/2023/06/minus.svg";
+      }
+    });
+  }
 
-for (var i = 0; i < Math.min(FAQs.length, itemsToShow); i++) {
-  createAccordionItem(FAQs[i].question, FAQs[i].answer);
-}
+  for (var i = 0; i < Math.min(FAQs.length, itemsToShow); i++) {
+    createAccordionItem(FAQs[i].question, FAQs[i].answer);
+  }
 
-// The rest of your JavaScript code...
+  // The rest of your JavaScript code...
 
-if (FAQs.length > itemsToShow) {
-  // Create the div that the button will sit in
-  var viewMoreContainer = document.createElement('div');
-  viewMoreContainer.id = 'view-more-container';
+  if (FAQs.length > itemsToShow) {
+    // Create the div that the button will sit in
+    var viewMoreContainer = document.createElement('div');
+    viewMoreContainer.id = 'view-more-container';
 
 
-  // Create the "View More" button
-  var viewMoreButton = document.createElement('button');
-  viewMoreButton.textContent = 'View More';
-  viewMoreButton.id = 'view-more-button';
+    // Create the "View More" button
+    var viewMoreButton = document.createElement('button');
+    viewMoreButton.textContent = 'View More';
+    viewMoreButton.id = 'view-more-button';
 
-  // Create the icon for the button
-  var viewMoreIcon = document.createElement('img');
-  viewMoreIcon.src = 'http://staging15.buildbuddy.co/wp-content/uploads/2023/07/arrow-down.svg';
-  viewMoreIcon.style.marginRight = '8px';
+    // Create the icon for the button
+    var viewMoreIcon = document.createElement('img');
+    viewMoreIcon.src = 'http://staging15.buildbuddy.co/wp-content/uploads/2023/07/arrow-down.svg';
+    viewMoreIcon.style.marginRight = '8px';
 
-  // Add the icon and text to the button
-  viewMoreButton.insertBefore(viewMoreIcon, viewMoreButton.firstChild);
+    // Add the icon and text to the button
+    viewMoreButton.insertBefore(viewMoreIcon, viewMoreButton.firstChild);
 
-  // Add the button to the div
-  viewMoreContainer.appendChild(viewMoreButton);
+    // Add the button to the div
+    viewMoreContainer.appendChild(viewMoreButton);
 
-  // Add the div to the container
-  var faqContainer = document.getElementById('faq-container');
-  faqContainer.appendChild(viewMoreContainer);
+    // Add the div to the container
+    var faqContainer = document.getElementById('faq-container');
+    faqContainer.appendChild(viewMoreContainer);
 
-  // Add an event listener to the "View More" button
-  viewMoreButton.addEventListener('click', function() {
-    for (var i = itemsToShow; i < Math.min(FAQs.length, itemsToShow + 10); i++) {
-      createAccordionItem(FAQs[i].question, FAQs[i].answer);
-    }
-    itemsToShow += 10;
-    if (itemsToShow >= FAQs.length) {
-      viewMoreContainer.style.display = 'none';
-    }
-  });
-}
-
+    // Add an event listener to the "View More" button
+    viewMoreButton.addEventListener('click', function () {
+      for (var i = itemsToShow; i < Math.min(FAQs.length, itemsToShow + 10); i++) {
+        createAccordionItem(FAQs[i].question, FAQs[i].answer);
+      }
+      itemsToShow += 10;
+      if (itemsToShow >= FAQs.length) {
+        viewMoreContainer.style.display = 'none';
+      }
+    });
+  }
 </script>
